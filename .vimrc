@@ -25,7 +25,7 @@ set nocompatible               " be iMproved
  " vim-scripts repos
  NeoBundle 'L9'
  NeoBundle 'FuzzyFinder'
- NeoBundle 'rails.vim'
+ NeoBundle 'tpope/vim-rails'
  " non github repos
  NeoBundle 'git://git.wincent.com/command-t.git'
  " color scheme
@@ -35,6 +35,10 @@ set nocompatible               " be iMproved
 " colorscheme
 "set background=dark
 colorscheme solarized
+"
+"############# Misc
+"
+set tabstop=4
 
 "##########################
 "  Plugin Settings
