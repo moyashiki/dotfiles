@@ -25,11 +25,15 @@ set nocompatible               " be iMproved
  " vim-scripts repos
  NeoBundle 'L9'
  NeoBundle 'FuzzyFinder'
+ NeoBundle 'verilog.vim'
  NeoBundle 'tpope/vim-rails'
+ NeoBundle 'tpope/vim-haml'
+ NeoBundle 'scrooloose/nerdtree'
  " non github repos
  NeoBundle 'git://git.wincent.com/command-t.git'
  " color scheme
  NeoBundle 'altercation/vim-colors-solarized'
+ " 
 
  filetype plugin indent on     " required!
 " colorscheme
