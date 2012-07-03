@@ -90,7 +90,7 @@ RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 # SSHログイン時のプロンプト
 [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-  PROMPT="%{${fg[white]}%}${HOST%%.*} ${PROMPT}"
+  PROMPT="%{${fg[red]}%}${HOST%%.*} ${PROMPT}"
 ;
 
 ### Title (user@hostname) ###
