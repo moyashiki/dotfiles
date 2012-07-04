@@ -28,6 +28,7 @@ set nocompatible               " be iMproved
  NeoBundle 'verilog.vim'
  NeoBundle 'tpope/vim-rails'
  NeoBundle 'tpope/vim-haml'
+ NeoBundle 'tpope/vim-markdown'
  NeoBundle 'scrooloose/nerdtree'
  " non github repos
  NeoBundle 'git://git.wincent.com/command-t.git'
