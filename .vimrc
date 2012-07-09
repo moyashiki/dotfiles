@@ -44,6 +44,8 @@ colorscheme solarized
 "############# Misc
 "
 set tabstop=4
+set backupdir=/tmp
+set directory=/tmp
 
 "##########################
 "  Plugin Settings
