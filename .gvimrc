@@ -1,4 +1,4 @@
-set guifont=S2Gうにフォント:h17
+set guifont=モトヤLマルベリ3等幅:h17
 " 縦幅　デフォルトは24
 set lines=40
 " 横幅　デフォルトは80

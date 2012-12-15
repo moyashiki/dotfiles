@@ -34,7 +34,9 @@ set nocompatible               " be iMproved
  NeoBundle 'git://git.wincent.com/command-t.git'
  " color scheme
  NeoBundle 'altercation/vim-colors-solarized'
- " 
+ " Vim-Latex
+ NeoBundle 'jcf/vim-latex'
+ NeoBundle 'thinca/vim-quickrun'
 
  filetype plugin indent on     " required!
 " colorscheme
@@ -126,3 +128,13 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+"
+"
+" Vim-Latex
+let tex_flavor = 'latex'
+set grepprg=grep\ -nH\ $*
+set shellslash
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
+let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
+let g:Tex_FormatDependency_pdf = 'dvi,pdf'
