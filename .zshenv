@@ -1,7 +1,13 @@
 ## 重複したパスを登録しない。
 typeset -U path
+# rvenv ref http://blog.takuyan.com/
+if [ -d ${HOME}/.rbenv ] ; then
+	export PATH="$HOME/.rbenv/bin:$PATH"
+	eval "$(rbenv init -)"
+fi
 # http://www.clear-code.com/blog/2011/9/5.html
 path=(# システム用
+      /usr/local/bin(N-/)
       /bin(N-/)
       # 自分用（--prefix=$HOME/localでインストールしたもの）
       $HOME/local/bin(N-/)
@@ -20,6 +26,5 @@ path=(# システム用
       # Cygwin用
       /cygdrive/c/meadow/bin(N-/)
       # システム用
-      /usr/local/bin(N-/)
       /usr/bin(N-/)
       /usr/games(N-/))

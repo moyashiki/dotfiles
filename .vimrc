@@ -38,11 +38,15 @@ set nocompatible               " be iMproved
  " Vim-Latex
  NeoBundle 'jcf/vim-latex'
  NeoBundle 'thinca/vim-quickrun'
-
+" Colorscheme
+NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'tomasr/molokai'
+colorscheme molokai
  filetype plugin indent on     " required!
 " colorscheme
 "set background=dark
-colorscheme solarized
+" colorscheme solarized
 "
 "############# Misc
 "
