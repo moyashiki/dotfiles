@@ -105,7 +105,8 @@ esac
 #
 #    App Settings
 #
-eval "$(rbenv init - zsh)"
+[[ -x 'whence rbenv' ]] && eval "$(rbenv init - zsh)"
+
 alias r=rails
 case "${OSTYPE}" in
 darwin*)
