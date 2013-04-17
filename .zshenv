@@ -9,6 +9,8 @@ fi
 path=(# システム用
       /usr/local/bin(N-/)
       /bin(N-/)
+	  #MacのPing
+	  /sbin(N-/)
       # 自分用（--prefix=$HOME/localでインストールしたもの）
       $HOME/local/bin(N-/)
       # 自分用（gem install --user-installでインストールしたもの）
