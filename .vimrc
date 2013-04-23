@@ -42,7 +42,7 @@ set nocompatible               " be iMproved
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tomasr/molokai'
-colorscheme molokai
+colorscheme jellybeans 
  filetype plugin indent on     " required!
 " colorscheme
 "set background=dark
