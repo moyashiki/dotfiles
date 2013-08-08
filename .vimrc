@@ -42,7 +42,8 @@ set nocompatible               " be iMproved
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tomasr/molokai'
-colorscheme jellybeans 
+" colorscheme jellybeans 
+colorscheme lucius
  filetype plugin indent on     " required!
 " colorscheme
 "set background=dark
@@ -50,7 +51,8 @@ colorscheme jellybeans
 "
 "############# Misc
 "
-set tabstop=4
+set tabstop=2
+set shiftwidth=2
 set backupdir=/tmp
 set directory=/tmp
 
