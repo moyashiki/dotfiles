@@ -5,6 +5,8 @@ if [ -d ${HOME}/.rbenv ] ; then
 	export PATH="$HOME/.rbenv/shims:$PATH"
 	eval "$(rbenv init -)"
 fi
+# completions
+fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
 # http://www.clear-code.com/blog/2011/9/5.html
 path=(# システム用
       /usr/local/bin(N-/)

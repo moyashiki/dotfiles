@@ -112,7 +112,7 @@ case "${OSTYPE}" in
 darwin*)
 	alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 	alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-	source /usr/local/share/zsh/site-functions/_gibo
+	# source /usr/local/share/zsh/site-functions/_gibo
 	. `brew --prefix`/etc/profile.d/z.sh
 	function precmd () {
 	   _z --add "$(pwd -P)"
