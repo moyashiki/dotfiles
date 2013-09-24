@@ -5,6 +5,22 @@ if [ -d ${HOME}/.rbenv ] ; then
 	export PATH="$HOME/.rbenv/shims:$PATH"
 	eval "$(rbenv init -)"
 fi
+# alias
+alias r=rails
+alias ls="ls -GF"
+alias la="ls -a"
+alias ll="ls -l"
+alias du="du -h"
+alias df="df -h"
+case "${OSTYPE}" in 
+	darwin*)
+		#文字化け対策
+		alias javac 'javac -J-Dfile.encoding=UTF-8'
+		;;
+esac
+
+
+
 # completions
 fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
 # http://www.clear-code.com/blog/2011/9/5.html
