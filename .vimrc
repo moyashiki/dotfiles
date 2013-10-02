@@ -14,7 +14,8 @@ set nocompatible               " be iMproved
  " after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
  NeoBundle 'Shougo/vimshell'
  NeoBundle 'Shougo/unite.vim'
- NeoBundle 'Shougo/neocomplcache'
+ " NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete.vim'
 
  " My Bundles here:
  "
@@ -61,6 +62,20 @@ set directory=/tmp
 "
 "#########################
 "
+" NeoComplete & NeoComplcache
+function! s:meet_neocomplete_requirements()
+   return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
+endfunction
+if s:meet_neocomplete_requirements()
+   NeoBundle 'Shougo/neocomplete.vim'
+   NeoBundleFetch 'Shougo/neocomplcache.vim'
+ else 		
+	     NeoBundleFetch 'Shougo/neocomplete.vim'
+			     NeoBundle 'Shougo/neocomplcache.vim'
+				 endif
+				 if s:meet_neocomplete_requirements()
+				 else
+
 " Neocomp
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -109,16 +124,6 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -135,7 +140,10 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-"
+endif
+" =====
+"	end neocmp
+" =====
 "
 " Vim-Latex
 let tex_flavor = 'latex'

@@ -1,10 +1,5 @@
 ## 重複したパスを登録しない。
 typeset -U path
-# rvenv ref http://blog.takuyan.com/
-if [ -d ${HOME}/.rbenv ] ; then
-	export PATH="$HOME/.rbenv/shims:$PATH"
-	eval "$(rbenv init -)"
-fi
 # alias
 alias r=rails
 alias ls="ls -GF"
@@ -53,3 +48,8 @@ path=(# システム用
 	  /usr/sbin(N-/) 
 	  /sbin(N-/) 
 	  /usr/local/sbin(N-/))
+# rvenv ref http://blog.takuyan.com/
+if [ -d ${HOME}/.rbenv ] ; then
+	export PATH="$HOME/.rbenv/shims:$PATH"
+	eval "$(rbenv init -)"
+fi
