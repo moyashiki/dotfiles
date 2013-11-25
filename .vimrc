@@ -25,6 +25,7 @@ NeoBundle 'Shougo/neocomplete.vim'
  NeoBundle 'tpope/vim-fugitive'
  NeoBundle 'Lokaltog/vim-easymotion'
  NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+NeoBunle 'osyo-manga/vim-over'
  " vim-scripts repos
  NeoBundle 'L9'
  NeoBundle 'FuzzyFinder'
