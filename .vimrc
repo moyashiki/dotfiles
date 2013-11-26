@@ -36,7 +36,7 @@ NeoBunle 'osyo-manga/vim-over'
  NeoBundle 'scrooloose/nerdtree'
  NeoBundle 'hail2u/vim-css3-syntax'
  " non github repos
- NeoBundle 'git://git.wincent.com/command-t.git'
+NeoBundle 'wincent/Command-T'
  " color scheme
  NeoBundle 'altercation/vim-colors-solarized'
  " Vim-Latex
