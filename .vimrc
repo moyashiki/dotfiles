@@ -1,57 +1,55 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 filetype plugin indent off     " required!
-
-set paste "コピペ対策
-
- if has('vim_starting')
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
-   call neobundle#rc(expand('~/.vim/bundle/'))
- endif
- " let NeoBundle manage NeoBundle
- " required! 
- "NeoBundle 'Shougo/neobundle.vim'
- " recommended to install
- NeoBundle 'Shougo/vimproc'
- " after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
- NeoBundle 'Shougo/vimshell'
- NeoBundle 'Shougo/unite.vim'
- " NeoBundle 'Shougo/neocomplcache'
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
+" let NeoBundle manage NeoBundle
+" required! 
+"NeoBundle 'Shougo/neobundle.vim'
+" recommended to install
+NeoBundle 'Shougo/vimproc'
+" after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite.vim'
+" NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplete.vim'
 
- " My Bundles here:
- "
- " original repos on github
- NeoBundle 'tpope/vim-fugitive'
- NeoBundle 'Lokaltog/vim-easymotion'
- NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-NeoBunle 'osyo-manga/vim-over'
- " vim-scripts repos
- NeoBundle 'L9'
- NeoBundle 'FuzzyFinder'
- NeoBundle 'verilog.vim'
- NeoBundle 'tpope/vim-rails'
- NeoBundle 'tpope/vim-haml'
- NeoBundle 'tpope/vim-markdown'
- NeoBundle 'scrooloose/nerdtree'
- NeoBundle 'hail2u/vim-css3-syntax'
- " non github repos
+" My Bundles here:
+"
+" original repos on github
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+NeoBudnle 'osyo-manga/vim-over'
+" vim-scripts repos
+NeoBundle 'L9'
+NeoBundle 'FuzzyFinder'
+NeoBundle 'verilog.vim'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'hail2u/vim-css3-syntax'
+" non github repos
 NeoBundle 'wincent/Command-T'
  " color scheme
- NeoBundle 'altercation/vim-colors-solarized'
- " Vim-Latex
- NeoBundle 'jcf/vim-latex'
- NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'altercation/vim-colors-solarized'
+" Vim-Latex
+NeoBundle 'jcf/vim-latex'
+NeoBundle 'thinca/vim-quickrun'
 " Colorscheme
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tomasr/molokai'
-" colorscheme jellybeans 
-colorscheme lucius
- filetype plugin indent on     " required!
+"
 " colorscheme
+"colorscheme jellybeans 
+colorscheme lucius
 "set background=dark
-" colorscheme solarized
+"colorscheme solarized
+filetype plugin indent on     " required!
 "
 "############# Misc
 "
