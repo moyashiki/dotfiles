@@ -16,31 +16,13 @@ NeoBundle 'Shougo/unite.vim'
 " NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplete.vim'
 
-<<<<<<< HEAD
- " My Bundles here:
- "
- " original repos on github
-=======
 " My Bundles here:
 "
 " original repos on github
->>>>>>> 1f1f383744f1933d343bd922468c413e1e22f764
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 NeoBundle 'osyo-manga/vim-over'
-<<<<<<< HEAD
- " vim-scripts repos
- NeoBundle 'L9'
- NeoBundle 'FuzzyFinder'
- NeoBundle 'verilog.vim'
- NeoBundle 'tpope/vim-rails'
- NeoBundle 'tpope/vim-haml'
- NeoBundle 'tpope/vim-markdown'
- NeoBundle 'scrooloose/nerdtree'
- NeoBundle 'hail2u/vim-css3-syntax'
- " non github repos
-=======
 " vim-scripts repos
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
@@ -51,7 +33,6 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'hail2u/vim-css3-syntax'
 " non github repos
->>>>>>> 1f1f383744f1933d343bd922468c413e1e22f764
 NeoBundle 'wincent/Command-T'
  " color scheme
 NeoBundle 'altercation/vim-colors-solarized'
