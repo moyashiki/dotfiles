@@ -1,20 +1,21 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
-filetype plugin indent off     " required!
+"""
+" NeoBundle Settings
+"""
 if has('vim_starting')
+	set nocompatible               " be iMproved
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
 endif
+call neobundle#rc(expand('~/.vim/bundle/'))
 " let NeoBundle manage NeoBundle
 " required! 
-"NeoBundle 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 " recommended to install
 NeoBundle 'Shougo/vimproc'
 " after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
-" NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neocomplcache'
+"NeoBundle 'Shougo/neocomplete.vim'
 
 " My Bundles here:
 "
@@ -23,6 +24,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'octol/vim-cpp-enhanced-highlight'
 " vim-scripts repos
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
@@ -50,6 +52,9 @@ colorscheme lucius
 "set background=dark
 "colorscheme solarized
 filetype plugin indent on     " required!
+"
+" Installation check.
+NeoBundleCheck
 "
 "############# Misc
 "
