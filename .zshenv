@@ -1,12 +1,8 @@
 ## 重複したパスを登録しない。
 typeset -U path
-# rvenv ref http://blog.takuyan.com/
-if [ -d ${HOME}/.rbenv ] ; then
-	export PATH="$HOME/.rbenv/shims:$PATH"
-	eval "$(rbenv init -)"
-fi
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 # http://www.clear-code.com/blog/2011/9/5.html
-path=(# システム用
+path=( # システム用
       /usr/local/bin(N-/)
       /bin(N-/)
 	  #MacのPing
@@ -35,3 +31,8 @@ path=(# システム用
 	  /usr/sbin(N-/) 
 	  /sbin(N-/) 
 	  /usr/local/sbin(N-/))
+# rvenv ref http://blog.takuyan.com/
+if [ -d ${HOME}/.rbenv ] ; then
+	export PATH="$HOME/.rbenv/shims:$PATH"
+	eval "$(rbenv init -)"
+fi
