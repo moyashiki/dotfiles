@@ -1,54 +1,60 @@
-set nocompatible               " be iMproved
- filetype off                   " required!
- filetype plugin indent off     " required!
+"""
+" NeoBundle Settings
+"""
+if has('vim_starting')
+	set nocompatible               " be iMproved
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+" let NeoBundle manage NeoBundle
+" required! 
+NeoBundleFetch 'Shougo/neobundle.vim'
+" recommended to install
+NeoBundle 'Shougo/vimproc'
+" after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache'
+"NeoBundle 'Shougo/neocomplete.vim'
 
- if has('vim_starting')
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
-   call neobundle#rc(expand('~/.vim/bundle/'))
- endif
- " let NeoBundle manage NeoBundle
- " required! 
- "NeoBundle 'Shougo/neobundle.vim'
- " recommended to install
- NeoBundle 'Shougo/vimproc'
- " after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
- NeoBundle 'Shougo/vimshell'
- NeoBundle 'Shougo/unite.vim'
- NeoBundle 'Shougo/neocomplcache'
-
- " My Bundles here:
- "
- " original repos on github
- NeoBundle 'tpope/vim-fugitive'
- NeoBundle 'Lokaltog/vim-easymotion'
- NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
- " vim-scripts repos
- NeoBundle 'L9'
- NeoBundle 'FuzzyFinder'
- NeoBundle 'verilog.vim'
- NeoBundle 'tpope/vim-rails'
- NeoBundle 'tpope/vim-haml'
- NeoBundle 'tpope/vim-markdown'
- NeoBundle 'scrooloose/nerdtree'
- NeoBundle 'hail2u/vim-css3-syntax'
- " non github repos
- NeoBundle 'git://git.wincent.com/command-t.git'
+" My Bundles here:
+"
+" original repos on github
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'octol/vim-cpp-enhanced-highlight'
+" vim-scripts repos
+NeoBundle 'L9'
+NeoBundle 'FuzzyFinder'
+NeoBundle 'verilog.vim'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'hail2u/vim-css3-syntax'
+" non github repos
+NeoBundle 'wincent/Command-T'
  " color scheme
- NeoBundle 'altercation/vim-colors-solarized'
- " Vim-Latex
- NeoBundle 'jcf/vim-latex'
- NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'altercation/vim-colors-solarized'
+" Vim-Latex
+NeoBundle 'jcf/vim-latex'
+NeoBundle 'thinca/vim-quickrun'
 " Colorscheme
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tomasr/molokai'
-
-" colorscheme jellybeans 
+"
+"colorscheme
+"colorscheme jellybeans 
 colorscheme lucius
-filetype plugin indent on     " required!
-" colorscheme
 "set background=dark
-" colorscheme solarized
+"colorscheme solarized
+filetype plugin indent on     " required!
+"
+" Installation check.
+NeoBundleCheck
 "
 "############# Misc
 "
@@ -62,6 +68,118 @@ set directory=/tmp
 "
 "#########################
 "
+" NeoComplete & NeoComplcache
+function! s:meet_neocomplete_requirements()
+	return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
+endfunction
+if s:meet_neocomplete_requirements()
+	NeoBundle 'Shougo/neocomplete.vim'
+	NeoBundleFetch 'Shougo/neocomplcache.vim'
+else 		
+	NeoBundleFetch 'Shougo/neocomplete.vim'
+	NeoBundle 'Shougo/neocomplcache.vim'
+endif
+if s:meet_neocomplete_requirements()
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+"" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" " Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" " Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+"
+" " Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+	\ 'default' : '',
+	\ 'vimshell' : $HOME.'/.vimshell_hist',
+	\ 'scheme' : $HOME.'/.gosh_completions'
+  \ }
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] =	'\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>	neocomplete#undo_completion()
+inoremap <expr><C-l>	neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR>	<C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+return neocomplete#smart_close_popup() . "\<CR>"
+" For no inserting <CR> key.
+"return pumvisible() ?	neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"                               " <C-h>, <BS>: close popup and delete backword
+"                               char.
+inoremap <expr><C-h>	neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>		neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>	neocomplete#close_popup()
+inoremap <expr><C-e>	neocomplete#cancel_popup()
+"                               " Close popup by <Space>.
+inoremap <expr><Space> pumvisible() ?	neocomplete#close_popup() : "\<Space>"
+
+" For cursor moving in insert mode(Not
+"                               recommended)
+"inoremap <expr><Left>
+"                               neocomplete#close_popup() . "\<Left>"
+"inoremap <expr><Right>
+"                               neocomplete#close_popup() . "\<Right>"
+"inoremap <expr><Up>
+"                               neocomplete#close_popup() . "\<Up>"
+"inoremap <expr><Down>
+"                               neocomplete#close_popup() . "\<Down>"
+" Or set this.
+"let g:neocomplete#enable_cursor_hold_i = 1
+" Or set this.
+"let g:neocomplete#enable_insert_char_pre = 1
+"
+"                               " AutoComplPop like behavior.
+"                               "let g:neocomplete#enable_auto_select = 1
+"
+"                               " Shell like behavior(not recommended).
+"                               "set completeopt+=longest
+"                               "let g:neocomplete#enable_auto_select = 1
+"                               "let g:neocomplete#disable_auto_complete = 1
+"                               "inoremap <expr><TAB>  pumvisible() ?
+"                               "\<Down>" : "\<C-x>\<C-u>"
+"
+" Enable omni completion.
+autocmd FileType css setlocal	omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal	omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal	omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal	omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal	omnifunc=xmlcomplete#CompleteTags
+"
+" Enable heavy omni completion.
+if	!exists('g:neocomplete#sources#omni#input_patterns')
+let	g:neocomplete#sources#omni#input_patterns =	{}
+endif
+"let
+"                                 g:neocomplete#sources#omni#input_patterns.php
+"                                 = '[^. \t]->\h\w*\|\h\w*::'
+"let
+"                                 g:neocomplete#sources#omni#input_patterns.c
+"                                 = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let
+"                                 g:neocomplete#sources#omni#input_patterns.cpp
+"                                 = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+"
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+"                                 let
+"                                 g:neocomplete#sources#omni#input_patterns.perl
+"                                 = '\h\w*->\h\w*\|\h\w*::'
+"
+"
+else
 " Neocomp
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -110,16 +228,6 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -129,12 +237,17 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
-	  let g:neocomplcache_omni_patterns = {}
-	endif
-	let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-	let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-	let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+endif
+" =====
+"	end neocmp
+" =====
 "
 " Vim-Latex
 let tex_flavor = 'latex'
