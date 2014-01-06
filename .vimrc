@@ -34,10 +34,9 @@ NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'itchyny/calendar.vim'
 " non github repos
 NeoBundle 'wincent/Command-T'
- " color scheme
-NeoBundle 'altercation/vim-colors-solarized'
 " Vim-Latex
 NeoBundle 'jcf/vim-latex'
 NeoBundle 'thinca/vim-quickrun'
@@ -46,6 +45,7 @@ NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'ciaranm/inkpot'
+NeoBundle 'altercation/vim-colors-solarized'
 """""""""""""""""
 " colorscheme
 " """"""""""""""
@@ -259,3 +259,8 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
 let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
 let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+"""
+" Calendar.vim
+"""
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
