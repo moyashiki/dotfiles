@@ -5,6 +5,7 @@ export EDITOR=vim        # エディタをvimに設定
 export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
 export KCODE=u           # KCODEにUTF-8を設定
 export AUTOFEATURE=true  # autotestでfeatureを動かす
+export TERM=xterm-256color
 
 bindkey -e               # キーバインドをemacsモードに設定
 #bindkey -v              # キーバインドをviモードに設定

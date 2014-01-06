@@ -45,13 +45,15 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tomasr/molokai'
-"
+NeoBundle 'ciaranm/inkpot'
+"""""""""""""""""
 " colorscheme
-"colorscheme jellybeans 
-colorscheme lucius
+" """"""""""""""
+" colorscheme jellybeans 
+" colorscheme lucius
+colorscheme inkpot
 "set background=dark
 "colorscheme solarized
-filetype plugin indent on     " required!
 "
 " Installation check.
 NeoBundleCheck
@@ -62,6 +64,8 @@ set tabstop=2
 set shiftwidth=2
 set backupdir=/tmp
 set directory=/tmp
+filetype plugin indent on     " required!
+syntax on
 
 "##########################
 "  Plugin Settings
