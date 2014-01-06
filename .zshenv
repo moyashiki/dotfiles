@@ -3,7 +3,7 @@ typeset -U path
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 # alias
 alias r=rails
-alias ls="ls -GF --color=always"
+alias ls="ls -GF"
 alias la="ls -a"
 alias ll="ls -l"
 alias du="du -h"
