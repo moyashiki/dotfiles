@@ -52,8 +52,6 @@ NeoBundle 'ciaranm/inkpot'
 " colorscheme jellybeans 
 " colorscheme lucius
 colorscheme inkpot
-"set background=dark
-"colorscheme solarized
 "
 " Installation check.
 NeoBundleCheck

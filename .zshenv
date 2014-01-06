@@ -1,5 +1,7 @@
 ## 重複したパスを登録しない。
 typeset -U path
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+=======
 # alias
 alias r=rails
 alias ls="ls -GF"
@@ -7,19 +9,16 @@ alias la="ls -a"
 alias ll="ls -l"
 alias du="du -h"
 alias df="df -h"
+#Java 文字化け対策
 case "${OSTYPE}" in 
 	darwin*)
-		#文字化け対策
 		alias javac 'javac -J-Dfile.encoding=UTF-8'
 		;;
 esac
-
-
-
 # completions
 fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
 # http://www.clear-code.com/blog/2011/9/5.html
-path=(# システム用
+path=( # システム用
       /usr/local/bin(N-/)
       /bin(N-/)
 	  #MacのPing
