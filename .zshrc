@@ -5,6 +5,7 @@ export EDITOR=vim        # エディタをvimに設定
 export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
 export KCODE=u           # KCODEにUTF-8を設定
 export AUTOFEATURE=true  # autotestでfeatureを動かす
+export TERM=xterm-256color
 
 bindkey -e               # キーバインドをemacsモードに設定
 #bindkey -v              # キーバインドをviモードに設定
@@ -26,6 +27,7 @@ setopt list_packed             # 補完候補をできるだけ詰めて表示�
 setopt list_types              # 補完候補にファイルの種類も表示する
 bindkey "^[[Z" reverse-menu-complete  # Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小文字を区別しない
+setopt complete_aliases					# aliasも補完する
 
 ### Glob ###
 setopt extended_glob # グロブ機能を拡張する
@@ -114,7 +116,7 @@ case "${OSTYPE}" in
 darwin*)
 	alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 	alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-	source /usr/local/share/zsh/site-functions/_gibo
+	# source /usr/local/share/zsh/site-functions/_gibo
 	. `brew --prefix`/etc/profile.d/z.sh
 	function precmd () {
 	   _z --add "$(pwd -P)"
