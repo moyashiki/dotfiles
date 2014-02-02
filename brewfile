@@ -1,0 +1,18 @@
+# Not needed ?
+#doctor
+# Make sure using lates Homebrew
+update
+# Update already-installed formula (takes too much time, I will do it manually later)
+#upgrade
+# Add repository
+tap homebrew/versions || true
+
+install zsh
+install git
+install rbenv
+install ruby-build
+install z
+install zsh-completions
+install zsh-syntax-highlighting 
+# Remove outdated versions
+cleanup
