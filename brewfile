@@ -14,5 +14,6 @@ install ruby-build
 install z
 install zsh-completions
 install zsh-syntax-highlighting 
+
 # Remove outdated versions
 cleanup
