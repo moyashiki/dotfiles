@@ -25,7 +25,7 @@ path=( 		# Homebrew
 	  #MacのPing
 	  /sbin(N-/)
 		# TeX Live
-		/usr/texbin/(N-/)
+		/usr/texbin(N-/)
     # 自分用（--prefix=$HOME/localでインストールしたもの）
     $HOME/local/bin(N-/)
     # 自分用（gem install --user-installでインストールしたもの）
