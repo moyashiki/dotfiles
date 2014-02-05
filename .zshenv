@@ -24,6 +24,8 @@ path=(# システム用
       /bin(N-/)
 	  #MacのPing
 	  /sbin(N-/)
+		# TeX Live
+		/usr/texbin/(N-/)
       # 自分用（--prefix=$HOME/localでインストールしたもの）
       $HOME/local/bin(N-/)
       # 自分用（gem install --user-installでインストールしたもの）
@@ -47,7 +49,9 @@ path=(# システム用
 	  # Archlinux System
 	  /usr/sbin(N-/) 
 	  /sbin(N-/) 
-	  /usr/local/sbin(N-/))
+	  /usr/local/sbin(N-/)
+		
+		)
 # rvenv ref http://blog.takuyan.com/
 if [ -d ${HOME}/.rbenv ] ; then
 	export PATH="$HOME/.rbenv/shims:$PATH"
