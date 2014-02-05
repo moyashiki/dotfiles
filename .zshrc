@@ -5,6 +5,7 @@ export EDITOR=vim        # エディタをvimに設定
 export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
 export KCODE=u           # KCODEにUTF-8を設定
 export AUTOFEATURE=true  # autotestでfeatureを動かす
+export TERM=xterm-256color
 
 bindkey -e               # キーバインドをemacsモードに設定
 #bindkey -v              # キーバインドをviモードに設定
@@ -107,7 +108,9 @@ esac
 #    App Settings
 #
 [[ -x 'whence rbenv' ]] && eval "$(rbenv init - zsh)"
-
+# Alias
+#
+alias -g @g='| grep'
 alias r=rails
 case "${OSTYPE}" in
 darwin*)
@@ -116,10 +119,15 @@ darwin*)
 	alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim'	
 	alias javac='javac -J-Dfile.encoding=UTF-8'
 	# source /usr/local/share/zsh/site-functions/_gibo
-	. `brew --prefix`/etc/profile.d/z.sh
-	function precmd () {
-	   _z --add "$(pwd -P)"
-	}
+  if [ -f  `brew --prefix`/etc/profile.d/z.sh ]; then
+		. `brew --prefix`/etc/profile.d/z.sh
+		function precmd () {
+	  	 _z --add "$(pwd -P)"
+		}
+	fi
+	if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+		source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	fi
 	;;
 esac
 typeset -U path

@@ -8,13 +8,12 @@ if has('vim_starting')
  endif
 " let NeoBundle manage NeoBundle
 " required! 
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 " recommended to install
 NeoBundle 'Shougo/vimproc'
 " after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
- " NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplete.vim'
 
 " My Bundles here:
@@ -23,7 +22,8 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" vim-scripts repos
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'octol/vim-cpp-enhanced-highlight'
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'verilog.vim'
@@ -32,25 +32,30 @@ NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'hail2u/vim-css3-syntax'
-" non github repos
-NeoBundle 'git://git.wincent.com/command-t.git'
-" color scheme
-NeoBundle 'altercation/vim-colors-solarized'
+" cpp highlighting
+NeoBundle 'vim-jp/cpp-vim'
+NeoBundle 'itchyny/calendar.vim'
+NeoBundle 'wincent/Command-T'
 " Vim-Latex
 NeoBundle 'jcf/vim-latex'
 NeoBundle 'thinca/vim-quickrun'
-" cpp highlighting
-NeoBundle 'vim-jp/cpp-vim'
 " Colorscheme
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tomasr/molokai'
-" colorscheme jellybeans 
-colorscheme lucius
-filetype plugin indent on     " required!
+NeoBundle 'ciaranm/inkpot'
+NeoBundle 'altercation/vim-colors-solarized'
+"""""""""""""""""
 " colorscheme
-"set background=dark
-" colorscheme solarized
+" """"""""""""""
+" colorscheme jellybeans 
+" colorscheme lucius
+colorscheme inkpot
+"
+" Installation check.
+NeoBundleCheck
+" After Installation
+filetype plugin indent on     " required!
 "
 "############# Misc
 "
@@ -59,6 +64,8 @@ set shiftwidth=2
 set backupdir=/tmp
 set directory=/tmp
 set pastetoggle=<F1> "コピペ対策
+syntax on
+
 "##########################
 "  Plugin Settings
 "
@@ -239,3 +246,8 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
 let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
 let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+"""
+" Calendar.vim
+"""
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
