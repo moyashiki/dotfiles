@@ -1,5 +1,5 @@
 ## 重複したパスを登録しない。
-typeset -U path
+typeset -U path cdpath fpath
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 # alias
 alias r=rails
@@ -8,6 +8,10 @@ alias la="ls -a"
 alias ll="ls -l"
 alias du="du -h"
 alias df="df -h"
+# sudo path
+typeset -xT SUDO_PATH sudo_path
+typeset -U sudo_path
+sudo_path=({/usr/local, /usr,} /sbin(N-/))
 #Java 文字化け対策
 case "${OSTYPE}" in 
 	darwin*)
