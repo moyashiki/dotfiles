@@ -14,6 +14,7 @@ install ruby-build
 install z
 install zsh-completions
 install zsh-syntax-highlighting 
+install youtube-dl
 
 # Remove outdated versions
 cleanup
