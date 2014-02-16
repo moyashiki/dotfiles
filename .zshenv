@@ -11,7 +11,6 @@ alias df="df -h"
 # sudo path
 typeset -xT SUDO_PATH sudo_path
 typeset -U sudo_path
-sudo_path=({/usr/local, /usr,} /sbin(N-/))
 #Java 文字化け対策
 case "${OSTYPE}" in 
 	darwin*)
