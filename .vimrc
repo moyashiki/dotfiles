@@ -32,6 +32,7 @@ NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'sudo.vim'
 " cpp highlighting
 NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'itchyny/calendar.vim'
