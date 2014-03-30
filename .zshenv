@@ -14,7 +14,8 @@ typeset -U sudo_path
 #Java 文字化け対策
 case "${OSTYPE}" in 
 	darwin*)
-		alias javac 'javac -J-Dfile.encoding=UTF-8'
+		alias javac='javac -J-Dfile.encoding=UTF-8'
+		alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 		;;
 esac
 # completions
