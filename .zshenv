@@ -1,8 +1,14 @@
 ## 重複したパスを登録しない。
 typeset -U path cdpath fpath
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+# #####
 # alias
+# #####
+# Rails
 alias r=rails
+compdef r=rails
+alias be="bundle exec"
+# file operation
 alias ls="ls -GF"
 alias la="ls -a"
 alias ll="ls -l"
