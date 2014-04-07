@@ -46,6 +46,7 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'ciaranm/inkpot'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'cocopon/iceberg.vim'
 """""""""""""""""
 " colorscheme
 " """"""""""""""
@@ -60,6 +61,7 @@ filetype plugin indent on     " required!
 "
 "############# Misc
 "
+set number " show line number
 set tabstop=2
 set shiftwidth=2
 set backupdir=/tmp
