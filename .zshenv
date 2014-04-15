@@ -6,7 +6,6 @@ export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 # #####
 # Rails
 alias r=rails
-compdef r=rails
 alias be="bundle exec"
 # file operation
 alias ls="ls -GF"
@@ -14,6 +13,7 @@ alias la="ls -a"
 alias ll="ls -l"
 alias du="du -h"
 alias df="df -h"
+alias g='git'
 # sudo path
 typeset -xT SUDO_PATH sudo_path
 typeset -U sudo_path
