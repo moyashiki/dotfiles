@@ -9,12 +9,18 @@ tap homebrew/versions || true
 
 install zsh
 install git
+install mercurial
+install tree
 install rbenv
 install ruby-build
 install z
 install zsh-completions
 install zsh-syntax-highlighting 
 install youtube-dl
+install lpc21isp
+install node
 
 # Remove outdated versions
 cleanup
+# Remove dead file
+prune
