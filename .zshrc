@@ -43,6 +43,17 @@ setopt hist_ignore_dups   # 直前と同じコマンドはヒストリに追加�
 setopt share_history      # 他のシェルのヒストリをリアルタイムで共有する
 setopt hist_reduce_blanks # 余分なスペースを削除してヒストリに保存する
 
+# Directory Stack setting 
+# http://qiita.com/yoshikaw/items/e12e239afdbaaec78ec7
+DIRSTACKSIZE=100
+setopt AUTO_PUSHD
+
+autoload -Uz compinit && compinit
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
+
 # マッチしたコマンドのヒストリを表示できるようにする
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
