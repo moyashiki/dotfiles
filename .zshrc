@@ -27,7 +27,7 @@ setopt list_packed             # 補完候補をできるだけ詰めて表示�
 setopt list_types              # 補完候補にファイルの種類も表示する
 bindkey "^[[Z" reverse-menu-complete  # Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小文字を区別しない
-setopt complete_aliases					# aliasも補完する
+setopt complete_aliases
 
 ### Glob ###
 setopt extended_glob # グロブ機能を拡張する
