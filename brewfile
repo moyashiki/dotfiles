@@ -11,14 +11,23 @@ install zsh
 install git
 install mercurial
 install tree
+# rbenv
 install rbenv
 install ruby-build
+install rbenv-default-gems
+install rbenv-gem-rehash
 install z
 install zsh-completions
 install zsh-syntax-highlighting 
 install youtube-dl
 install lpc21isp
 install node
+# homebrew cask
+install caskroom/cask/brew-cask
+cask install google-chrome
+
+# alfred link
+cask alfred link
 
 # Remove outdated versions
 cleanup
