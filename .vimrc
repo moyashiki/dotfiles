@@ -24,6 +24,8 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'octol/vim-cpp-enhanced-highlight'
+" ANSI Color display
+NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'verilog.vim'
@@ -35,10 +37,12 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'sudo.vim'
 " cpp highlighting
 NeoBundle 'vim-jp/cpp-vim'
+" Google calendar
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'wincent/Command-T'
 " Vim-Latex
 NeoBundle 'jcf/vim-latex'
+" quickrun
 NeoBundle 'thinca/vim-quickrun'
 " Colorscheme
 NeoBundle 'jonathanfilip/vim-lucius'
