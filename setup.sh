@@ -9,3 +9,7 @@ do
     echo "シンボリックリンクを貼りました: $file"
   fi
 done
+# for rbenv
+if [ -a $HOME/.rbenv ]; then
+	echo "make default-gems"	
+fi
