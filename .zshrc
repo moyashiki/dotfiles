@@ -164,3 +164,9 @@ sudo() {
       ;;
   esac
 }
+#
+# Pythonz
+#
+if [ -s $HOME/.pythonz/etc/bashrc ]; then
+	    source $HOME/.pythonz/etc/bashrc
+fi
