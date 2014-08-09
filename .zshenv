@@ -22,8 +22,14 @@ case "${OSTYPE}" in
 	darwin*)
 		alias javac='javac -J-Dfile.encoding=UTF-8'
 		alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+	linux*)
+		alias ls="ls -F --color"
 		;;
 esac
+# Go lang settings
+export GOPATH="$HOME/go"
+export GOROOT="/usr/local/opt/go/libexec"
+
 # completions
 fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
 # http://www.clear-code.com/blog/2011/9/5.html
@@ -60,6 +66,8 @@ path=( 		# Homebrew
 	  /usr/sbin(N-/) 
 	  /sbin(N-/) 
 	  /usr/local/sbin(N-/)
+		# Go lang
+		$GOPATH/bin(N-/)
 		)
 # rvenv ref http://blog.takuyan.com/
 if [ -d ${HOME}/.rbenv ] ; then
