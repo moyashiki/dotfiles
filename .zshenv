@@ -22,6 +22,7 @@ case "${OSTYPE}" in
 	darwin*)
 		alias javac='javac -J-Dfile.encoding=UTF-8'
 		alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+		;;
 	linux*)
 		alias ls="ls -F --color"
 		;;
