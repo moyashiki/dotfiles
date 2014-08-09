@@ -32,9 +32,15 @@ NeoBundle 'verilog.vim'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
-NeoBundle 'scrooloose/nerdtree'
+" html support
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sudo.vim'
+" syntax check
+NeoBundle 'scrooloose/syntastic'
+" autoclose 
+NeoBundle 'Townk/vim-autoclose'
 " cpp highlighting
 NeoBundle 'vim-jp/cpp-vim'
 " Google calendar
@@ -44,6 +50,8 @@ NeoBundle 'wincent/Command-T'
 NeoBundle 'jcf/vim-latex'
 " quickrun
 NeoBundle 'thinca/vim-quickrun'
+"  :D :D :D
+NeoBundle 'drillbits/nyan-modoki.vim'
 " Colorscheme
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'nanotech/jellybeans.vim'
@@ -72,6 +80,11 @@ set backupdir=/tmp
 set directory=/tmp
 set pastetoggle=<F1> "コピペ対策
 syntax on
+set laststatus=2
+set statusline=%F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
+" nyan-modoki settings
+let g:nyan_modoki_select_cat_face_number = 1
+let g:nayn_modoki_animation_enabled= 1
 
 "##########################
 "  Plugin Settings
