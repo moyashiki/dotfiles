@@ -83,8 +83,21 @@ syntax on
 set laststatus=2
 set statusline=%F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
 " nyan-modoki settings
-let g:nyan_modoki_select_cat_face_number = 1
+let g:nyan_modoki_select_cat_face_number = 2
 let g:nayn_modoki_animation_enabled= 1
+
+"*****************************************************************************
+""" Abbreviations
+"*****************************************************************************
+""" no one is really happy until you have this shortcuts
+cab W! w!
+cab Q! q!
+cab Wq wq
+cab Wa wa
+cab wQ wq
+cab WQ wq
+cab W w
+cab Q q
 
 "##########################
 "  Plugin Settings
