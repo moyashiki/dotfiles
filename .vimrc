@@ -37,12 +37,15 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sudo.vim'
+" visualize indent
+NeoBundle 'Yggdroot/indentLine'
 " syntax check
 NeoBundle 'scrooloose/syntastic'
 " autoclose 
 NeoBundle 'Townk/vim-autoclose'
 " cpp highlighting
-NeoBundle 'vim-jp/cpp-vim'
+NeoBundleLazy 'vim-jp/cpp-vim' , {
+	\ 'autoload' : {'filetype' : 'cpp'}}
 " Google calendar
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'wincent/Command-T'
@@ -296,3 +299,8 @@ let g:Tex_FormatDependency_pdf = 'dvi,pdf'
 """
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+""""
+" indentLine
+"""
+let g:indentLine_faster = 1
+nmap <silent><Leader>i :<C-u>IndentLinesToggle<CR>
