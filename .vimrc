@@ -118,7 +118,16 @@ nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>#
+"#########################
 "
+" quickrun.vim
+"
+"########################
+let g:quickrun_config = {
+\   "_" : {
+\       "runner" : "vimproc",
+\   },
+\}
 " NeoComplete & NeoComplcache
 function! s:meet_neocomplete_requirements()
 	return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
