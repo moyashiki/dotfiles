@@ -75,3 +75,8 @@ if [ -d ${HOME}/.rbenv ] ; then
 	export PATH="$HOME/.rbenv/shims:$PATH"
 	eval "$(rbenv init -)"
 fi
+### ファイルが存在すれば読み込む
+function source_if_exist {
+  [[ -f $1 ]] && source "$@"
+}
+source_if_exist "$HOME/.zshenv.local"
