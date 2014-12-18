@@ -1,24 +1,25 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
-filetype plugin indent off     " required!
-" 
-if has('vim_starting')
+if !1 | finish | endif
+
+ if has('vim_starting')
+   if &compatible
+     set nocompatible               " Be iMproved
+   endif
+
+   " Required:
    set runtimepath+=~/.vim/bundle/neobundle.vim/
-   call neobundle#rc(expand('~/.vim/bundle/'))
  endif
-" let NeoBundle manage NeoBundle
-" required! 
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+" Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 " recommended to install
 NeoBundle 'Shougo/vimproc'
-" after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 
 " My Bundles here:
-"
-" original repos on github
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -62,20 +63,19 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'ciaranm/inkpot'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'cocopon/iceberg.vim'
+call neobundle#end
+" After Installation
+filetype plugin indent on     " required!
+" Installation check.
+NeoBundleCheck
 """""""""""""""""
 " colorscheme
 " """"""""""""""
 " colorscheme jellybeans 
 " colorscheme lucius
 colorscheme inkpot
-"
-" Installation check.
-NeoBundleCheck
-" After Installation
-filetype plugin indent on     " required!
-"
+
 "############# Misc
-"
 set number " show line number
 set tabstop=2
 set shiftwidth=2
