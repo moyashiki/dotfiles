@@ -20,7 +20,7 @@ setopt notify            # バックグラウンドジョブの状態変化を�
 setopt equals            # =commandを`which command`と同じ処理にする
 
 ### Complement ###
-autoload -U compinit; compinit # 補完機能を有効にする
+autoload -Uz compinit && compinit #補完機能を有効
 setopt auto_list               # 補完候補を一覧で表示する(d)
 setopt auto_menu               # 補完キー連打で補完候補を順に表示する(d)
 setopt list_packed             # 補完候補をできるだけ詰めて表示する
@@ -48,7 +48,6 @@ setopt hist_reduce_blanks # 余分なスペースを削除してヒストリに�
 DIRSTACKSIZE=100
 setopt AUTO_PUSHD
 
-autoload -Uz compinit && compinit
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
@@ -140,6 +139,9 @@ darwin*)
 		source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	fi
 	;;
+cygwin*)
+# alias ls='ls --color=auto --ignore={NTUSER*,ntuser*}'
+;;
 esac
 #
 # sudo vim 
