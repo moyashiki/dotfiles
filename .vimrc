@@ -63,7 +63,7 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'ciaranm/inkpot'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'cocopon/iceberg.vim'
-call neobundle#end
+call neobundle#end()
 " After Installation
 filetype plugin indent on     " required!
 " Installation check.
