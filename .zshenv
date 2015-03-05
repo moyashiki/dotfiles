@@ -22,6 +22,7 @@ case "${OSTYPE}" in
 	darwin*)
 		alias javac='javac -J-Dfile.encoding=UTF-8'
 		alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+		export GOROOT="/usr/local/opt/go/libexec"
 		;;
 	linux*)
 		alias ls="ls -F --color"
@@ -29,7 +30,6 @@ case "${OSTYPE}" in
 esac
 # Go lang settings
 export GOPATH="$HOME/go"
-export GOROOT="/usr/local/opt/go/libexec"
 
 # completions
 fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
