@@ -27,6 +27,8 @@ case "${OSTYPE}" in
 	linux*)
 		alias ls="ls -F --color"
 		;;
+	cygwin*)
+		;;
 esac
 # Go lang settings
 export GOPATH="$HOME/go"
@@ -59,7 +61,7 @@ path=( 		# Homebrew
     /usr/sfw/bin(N-/)
     /usr/ccs/bin(N-/)
     # Cygwin用
-    /cygdrive/c/meadow/bin(N-/)
+		/cygdrive/c/go/bin(N-/)
     # システム用
     /usr/bin(N-/)
     /usr/games(N-/)

@@ -30,11 +30,13 @@ NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'verilog.vim'
+NeoBundle 'faith/vim-go'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
 " html support
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sudo.vim'
@@ -85,10 +87,7 @@ set pastetoggle=<F1> "コピペ対策
 syntax on
 set laststatus=2
 set statusline=%F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
-" nyan-modoki settings
-let g:nyan_modoki_select_cat_face_number = 2
-let g:nayn_modoki_animation_enabled= 1
-
+set backspace=start,eol,indent
 "*****************************************************************************
 """ Abbreviations
 "*****************************************************************************
@@ -106,7 +105,11 @@ cab Q q
 "  Plugin Settings
 "
 "#########################
-"
+" nyan-modoki settings
+let g:nyan_modoki_select_cat_face_number = 2
+let g:nayn_modoki_animation_enabled= 1
+
+"########################
 " Unite.vim
 "
 "########################
