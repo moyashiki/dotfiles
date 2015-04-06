@@ -52,7 +52,7 @@ path=( 		# Homebrew
     #$HOME/.gem/ruby/*/bin(N-/)
     # rbenv用
     ## 2012-02-21
-    #$HOME/.rbenv/bin(N-/)
+    $HOME/.rbenv/bin(N-/)
 	  #$HOME/.rbenv/shims(N-/)
     # Debian GNU/Linux用
     /var/lib/gems/*/bin(N-/)
