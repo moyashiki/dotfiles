@@ -28,6 +28,9 @@ setopt list_types              # 補完候補にファイルの種類も表示�
 bindkey "^[[Z" reverse-menu-complete  # Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小文字を区別しない
 setopt complete_aliases
+zstyle ':completion:*' menu select
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
 
 ### Glob ###
 setopt extended_glob # グロブ機能を拡張する
@@ -46,12 +49,6 @@ setopt hist_reduce_blanks # 余分なスペースを削除してヒストリに�
 # Directory Stack setting 
 # http://qiita.com/yoshikaw/items/e12e239afdbaaec78ec7
 DIRSTACKSIZE=100
-setopt AUTO_PUSHD
-
-
-zstyle ':completion:*' menu select
-zstyle ':completion:*:cd:*' ignore-parents parent pwd
-zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
 
 # マッチしたコマンドのヒストリを表示できるようにする
 autoload history-search-end
@@ -62,7 +59,6 @@ bindkey "^N" history-beginning-search-forward-end
 
 # すべてのヒストリを表示する
 function history-all { history -E 1 }
-
 
 # ------------------------------
 # Look And Feel Settings
@@ -78,6 +74,8 @@ export ZLS_COLORS=$LS_COLORS
 export CLICOLOR=true
 # 補完候補に色を付ける
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# 日本語ファイル名を表示
+setopt print_eight_bit
 
 ### Prompt ###
 # プロンプトに色を付ける
@@ -87,7 +85,6 @@ tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
 tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
-
 # rootユーザ時(太字にし、アンダーバーをつける)
 if [ ${UID} -eq 0 ]; then
   tmp_prompt="%B%U${tmp_prompt}%u%b"
@@ -95,7 +92,6 @@ if [ ${UID} -eq 0 ]; then
   tmp_rprompt="%B%U${tmp_rprompt}%u%b"
   tmp_sprompt="%B%U${tmp_sprompt}%u%b"
 fi
-
 PROMPT=$tmp_prompt    # 通常のプロンプト
 PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
 RPROMPT=$tmp_rprompt  # 右側のプロンプト
@@ -104,7 +100,6 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
   PROMPT="%{${fg[red]}%}${HOST%%.*} ${PROMPT}"
 ;
-
 ### Title (user@hostname) ###
 case "${TERM}" in
 kterm*|xterm*|)
@@ -141,6 +136,7 @@ darwin*)
 	;;
 cygwin*)
 # alias ls='ls --color=auto --ignore={NTUSER*,ntuser*}'
+unsetopt promptcr 
 ;;
 esac
 #
@@ -166,9 +162,4 @@ sudo() {
       ;;
   esac
 }
-#
-# Pythonz
-#
-if [ -s $HOME/.pythonz/etc/bashrc ]; then
-	    source $HOME/.pythonz/etc/bashrc
-fi
+
