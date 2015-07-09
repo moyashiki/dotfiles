@@ -49,11 +49,10 @@ path=( 		# Homebrew
     $HOME/local/bin(N-/)
     # 自分用（gem install --user-installでインストールしたもの）
     ## 2012-01-07
-    #$HOME/.gem/ruby/*/bin(N-/)
+    $HOME/.gem/ruby/*/bin(N-/)
     # rbenv用
     ## 2012-02-21
     $HOME/.rbenv/bin(N-/)
-	  #$HOME/.rbenv/shims(N-/)
     # Debian GNU/Linux用
     /var/lib/gems/*/bin(N-/)
     # Solaris用
