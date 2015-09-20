@@ -1,4 +1,4 @@
-DOT_FILES=( .vimrc .gvimrc .emacs.d .bash_profile .zshrc .zshenv .gemrc)
+DOT_FILES=( .vimrc .gvimrc .emacs.d .bash_profile .zshrc .zshenv .gemrc .tmux.conf)
 
 for file in ${DOT_FILES[@]}
 do
