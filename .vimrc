@@ -1,4 +1,4 @@
-if !1 | finish | endif
+ if 0 | endif
 
  if has('vim_starting')
    if &compatible
