@@ -21,12 +21,9 @@ NeoBundle 'Shougo/neocomplete.vim'
 
 " My Bundles here:
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'octol/vim-cpp-enhanced-highlight'
+"NeoBundle 'octol/vim-cpp-enhanced-highlight'
 " ANSI Color display
-NeoBundle 'vim-scripts/AnsiEsc.vim'
+"NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'verilog.vim'
@@ -53,11 +50,11 @@ NeoBundleLazy 'vim-jp/cpp-vim' , {
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'wincent/Command-T'
 " Vim-Latex
-NeoBundle 'jcf/vim-latex'
+" NeoBundle 'jcf/vim-latex'
 " quickrun
 NeoBundle 'thinca/vim-quickrun'
 "  :D :D :D
-NeoBundle 'drillbits/nyan-modoki.vim'
+" NeoBundle 'drillbits/nyan-modoki.vim'
 " Colorscheme
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'nanotech/jellybeans.vim'
@@ -66,6 +63,7 @@ NeoBundle 'ciaranm/inkpot'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'cocopon/iceberg.vim'
 NeoBundle 'Shougo/neocomplete.vim'
+
 call neobundle#end()
 " After Installation
 filetype plugin indent on     " required!
@@ -87,7 +85,8 @@ set directory=/tmp
 set pastetoggle=<F1> "コピペ対策
 syntax on
 set laststatus=2
-set statusline=%F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
+"set statusline=%F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
+set statusline=%F%m%r%h%w[%{&ff}]%=(%l,%c)[%P]
 set backspace=start,eol,indent
 "*****************************************************************************
 """ Abbreviations
@@ -216,13 +215,13 @@ let	g:neocomplete#sources#omni#input_patterns.cpp	= '[^.[:digit:] *\t]\%(\.\|->\
 let	g:neocomplete#sources#omni#input_patterns.perl	= '\h\w*->\h\w*\|\h\w*::'
 
 " Vim-Latex
-let tex_flavor = 'latex'
-set grepprg=grep\ -nH\ $*
-set shellslash
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
-let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
-let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+"let tex_flavor = 'latex'
+"set grepprg=grep\ -nH\ $*
+"set shellslash
+"let g:Tex_DefaultTargetFormat = 'pdf'
+"let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
+"let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
+"let g:Tex_FormatDependency_pdf = 'dvi,pdf'
 """
 " Calendar.vim
 """
