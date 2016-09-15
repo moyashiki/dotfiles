@@ -56,8 +56,6 @@ NeoBundle 'wincent/Command-T'
 NeoBundle 'jcf/vim-latex'
 " quickrun
 NeoBundle 'thinca/vim-quickrun'
-"  :D :D :D
-NeoBundle 'drillbits/nyan-modoki.vim'
 " Colorscheme
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'nanotech/jellybeans.vim'
@@ -87,7 +85,8 @@ set directory=/tmp
 set pastetoggle=<F1> "コピペ対策
 syntax on
 set laststatus=2
-set statusline=%F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
+set statusline=%F%m%r%h%w[%{&ff}]%=(%l,%c)[%P]
+" set statusline=%F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
 set backspace=start,eol,indent
 "*****************************************************************************
 """ Abbreviations
@@ -177,16 +176,6 @@ inoremap <expr><C-e>	neocomplete#cancel_popup()
 " Close popup by <Space>.
 inoremap <expr><Space> pumvisible() ?	neocomplete#close_popup() : "\<Space>"
 
-" For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left>          neocomplete#close_popup() . "\<Left>"
-"inoremap <expr><Right>	neocomplete#close_popup() . "\<Right>"
-"inoremap <expr><Up>	neocomplete#close_popup() . "\<Up>"
-"inoremap <expr><Down>	neocomplete#close_popup() . "\<Down>"
-" Or set this.
-"let g:neocomplete#enable_cursor_hold_i = 1
-" Or set this.
-"let g:neocomplete#enable_insert_char_pre = 1
-"
 " AutoComplPop like behavior.
 "let g:neocomplete#enable_auto_select = 1
 " Shell like behavior(not recommended).
@@ -233,3 +222,11 @@ let g:calendar_google_task = 1
 """
 let g:indentLine_faster = 1
 nmap <silent><Leader>i :<C-u>IndentLinesToggle<CR>
+"""
+" neosnippet
+"""
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+"
