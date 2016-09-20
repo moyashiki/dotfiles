@@ -38,7 +38,8 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sudo.vim'
 " visualize indent
-NeoBundle 'Yggdroot/indentLine'
+" NeoBundle 'Yggdroot/indentLine'
+" ## http://qiita.com/karur4n/items/a26007236c59c5fb8735
 " syntax check
 NeoBundle 'scrooloose/syntastic'
 " autoclose 
