@@ -1,78 +1,62 @@
- if 0 | endif
-
- if has('vim_starting')
-   if &compatible
-     set nocompatible               " Be iMproved
-   endif
-
-   " Required:
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
- endif
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
-" recommended to install
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplete.vim'
+set runtimepath+=/home/moyashiki/.vim/repos/github.com/Shougo/dein.vim
 
-" My Bundles here:
-NeoBundle 'tpope/vim-fugitive'
-"NeoBundle 'octol/vim-cpp-enhanced-highlight'
-" ANSI Color display
-"NeoBundle 'vim-scripts/AnsiEsc.vim'
-NeoBundle 'L9'
-NeoBundle 'FuzzyFinder'
-NeoBundle 'verilog.vim'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'tpope/vim-markdown'
+" Required:
+call dein#begin('/home/moyashiki/.vim/')
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('vim-scripts/AnsiEsc.vim')
+
+" You can specify revision/branch/tag.
+call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+call dein#add('L9')
+call dein#add('FuzzyFinder')
+call dein#add('fatih/vim-go')
+call dein#add('tpope/vim-rails')
+call dein#add('tpope/vim-haml')
+call dein#add('tpope/vim-markdown')
 " html support
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'sudo.vim'
+call dein#add('sudo.vim')
+call dein#add('ciaranm/inkpot')
 " visualize indent
-" NeoBundle 'Yggdroot/indentLine'
+" call dein#add('Yggdroot/indentLine')
 " ## http://qiita.com/karur4n/items/a26007236c59c5fb8735
 " syntax check
-NeoBundle 'scrooloose/syntastic'
+call dein#add('scrooloose/syntastic')
 " autoclose 
-NeoBundle 'Townk/vim-autoclose'
-" cpp highlighting
-NeoBundleLazy 'vim-jp/cpp-vim' , {
-	\ 'autoload' : {'filetype' : 'cpp'}}
-" Google calendar
-NeoBundle 'itchyny/calendar.vim'
-NeoBundle 'wincent/Command-T'
-" Vim-Latex
-" NeoBundle 'jcf/vim-latex'
+call dein#add('Townk/vim-autoclose')
 " quickrun
-NeoBundle 'thinca/vim-quickrun'
-" Colorscheme
-NeoBundle 'jonathanfilip/vim-lucius'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'ciaranm/inkpot'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'cocopon/iceberg.vim'
-NeoBundle 'Shougo/neocomplete.vim'
+call dein#add('thinca/vim-quickrun')
 
-call neobundle#end()
-" After Installation
-filetype plugin indent on     " required!
-" Installation check.
-NeoBundleCheck
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
 """""""""""""""""
 " colorscheme
-" """"""""""""""
-" colorscheme jellybeans 
-" colorscheme lucius
+"""""""""""""""""
 colorscheme inkpot
 
 "############# Misc
@@ -103,10 +87,6 @@ cab Q q
 "  Plugin Settings
 "
 "#########################
-" nyan-modoki settings
-let g:nyan_modoki_select_cat_face_number = 2
-let g:nayn_modoki_animation_enabled= 1
-
 "########################
 " Unite.vim
 "
@@ -198,10 +178,6 @@ endif
 let	g:neocomplete#sources#omni#input_patterns.c	= '[^.[:digit:] *\t]\%(\.\|->\)'
 let	g:neocomplete#sources#omni#input_patterns.cpp	= '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 "
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let	g:neocomplete#sources#omni#input_patterns.perl	= '\h\w*->\h\w*\|\h\w*::'
-
 " Vim-Latex
 "let tex_flavor = 'latex'
 "set grepprg=grep\ -nH\ $*
@@ -210,11 +186,6 @@ let	g:neocomplete#sources#omni#input_patterns.perl	= '\h\w*->\h\w*\|\h\w*::'
 "let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
 "let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
 "let g:Tex_FormatDependency_pdf = 'dvi,pdf'
-"""
-" Calendar.vim
-"""
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
 """"
 " indentLine
 """
